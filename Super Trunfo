@@ -1,0 +1,97 @@
+#include <stdio.h>
+
+int main ()
+{
+
+// Declaraçao da carta A01 em variaveis;
+    char estado1[5] = "A", codigocarta1[5] = "01", nomecidade1[20] = "SãoPaulo";
+    float pib1 = 799.28,  areakm_1 = 1521.11;
+    unsigned long int populacao_1 = 12325000;
+    int numerosturisticos_1 = 50;
+    float densidade_populacional_1 = pib1 / areakm_1;
+    float pib_per_capita1 = pib1 / populacao_1;
+
+// Declaraçao da carta B02 em variaveis;
+    char estado2[5] = "B", codigocarta2[5] = "02", nomecidade2[20] = "RiodeJaneiro";
+    float pib2 = 600.50, areakm_2 = 1200.25;
+    unsigned long int populacao_2 = 6748000;
+    int numerosturisticos2 = 30;
+    float densidade_populacional_2 = pib2 / areakm_2;
+    float pib_per_capita2 = pib2 / populacao_2;
+
+// Declaração da carta C03 em variaveis;
+    char estado3[5] = "C", codigocarta3[5] = "03", nomecidade3[20] = "PortoAlegre";
+    float pib3 = 677.80, areakm_3 = 496.80;
+    unsigned long int populacao_3 = 1335600;
+    int numerosturisticos3 = 47;
+    float densidade_populacional_3 = pib3 / areakm_3;
+    float pib_per_capita3 = pib3 / populacao_3;
+
+// Interaçao e leitura primeira carta;
+        printf("Bem vindo ao The city Cards BR!\n");
+        printf("Digite o codigo da carta: -> A01 <-\n");
+        scanf("%s", estado1);
+        printf("Cidade: %s\n", nomecidade1);
+        printf("Area em km: %f\n", areakm_1);
+        printf("População: %d\n", populacao_1);
+        printf("Pontos turisticos: %d\n", numerosturisticos_1);     
+        printf("PIB: %f\n", pib1);
+        printf("Densidade Populacional: %.2f\n", densidade_populacional_1);
+        printf("PIB Per Capita: %f\n", pib_per_capita1);
+        printf("\n");
+    
+// Interaçao e leitura segunda carta;  
+        printf("Digite o codigo da carta: -> B02 <-\n");
+        scanf("%s", estado2);
+        printf("Cidade: %s\n", nomecidade2);
+        printf("Area em km: %f\n", areakm_2);
+        printf("População: %d\n", populacao_2);
+        printf("Pontos turisticos: %d\n", numerosturisticos2);     
+        printf("PIB: %f\n", pib2);
+        printf("Densidade Populacional: %.2f\n", densidade_populacional_2);
+        printf("PIB Per Capita: %f\n", pib_per_capita2);
+        printf("\n");
+    
+ // Interação e leitura terceira carta;
+        printf("Digite o codigo da carta: -> C03 <-\n");
+        scanf("%s", estado3);
+        printf("Cidade: %s\n", nomecidade3);
+        printf("Area em Km: %f\n", areakm_3);
+        printf("População: %d\n", populacao_3);
+        printf("Pomtos turisticos: %d\n", numerosturisticos3);
+        printf("PIB: %f\n", pib3);
+        printf("Densidade Populacional: %.2f\n", densidade_populacional_3);
+        printf("PIB Per Capita: %f\n", pib_per_capita3);
+        printf("\n");
+
+// Calculos para Carta 01;
+    float super_poder_1 = (float) numerosturisticos_1 + populacao_1 + areakm_1 + pib1 + pib_per_capita1 + ( 1 / densidade_populacional_1);
+
+// Calculos para Carta 02;
+    float super_poder_2 = (float) numerosturisticos2 + populacao_2 + areakm_2 + pib2 + pib_per_capita2 + ( 1 / densidade_populacional_2);
+
+// Calculos para Carta 03;
+    float super_poder_3 = (float) numerosturisticos3 + populacao_3 + areakm_3 + pib3 + pib_per_capita3 + ( 1 / densidade_populacional_3);
+
+// Impressão do resultado dos Super-Poder;
+    printf("Atributo Super-Poder carta A01: %f\n", super_poder_1);
+    printf("Atributo Super-Poder carta B02: %f\n", super_poder_2);
+    printf("Atributo Super-Poder carta C03: %f\n", super_poder_3);
+
+// Variavel para resultado de comparações das cartas;
+    int resultado_1, resultado_2, resultado_3;
+
+// Comparações dos valores;
+    resultado_1 = super_poder_1 > super_poder_2;
+    resultado_2 = super_poder_2 > super_poder_3;
+    resultado_3 = super_poder_3 > super_poder_1;
+
+// Impressão dos resultados;
+    printf("Resultado da comparação: A01 é maior que B02: %d\n", resultado_1);
+    printf("Resultado da comparação: B02 é maior que C03: %d\n", resultado_2);
+    printf("Resultado da comparação: C03 é maior que A01: %d\n", resultado_3);
+    printf("*** FIM DE JOGO ***");
+
+return 0;
+
+}
