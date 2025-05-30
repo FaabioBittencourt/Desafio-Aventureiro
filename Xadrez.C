@@ -1,44 +1,49 @@
 #include <stdio.h>
 
+void movimentoTorre (int Torre)
+{
+    if (Torre > 0) {
+        printf (" Direita\n");
+        movimentoTorre (Torre - 1);
+    }
+} 
+void movimentoBispo (int Bispo) 
+{
+    if (Bispo > 0) {
+        printf (" Cima/Direita.\n");
+        movimentoBispo (Bispo - 1);
+    }
+}
+void movimentoRainha (int Rainha) 
+{
+    if (Rainha > 0)
+    {
+        printf(" Esquerda.\n");
+        movimentoRainha (Rainha - 1);
+    }
+}
+
 int main ()
 {
- 
-// Inicio jogo Xadrez, interação com usúario; 
-    printf (" -> ### Jogo de Xadrez ###  <-\n");
-    printf ("     BEM VINDO!! \n");
-// Movimento da peça! (Bispo);
-    printf ("Movimento completo Bispo.\n");
-    for (int b = 0; b < 5; b++)
-    {
-        printf(" Para Cima/Direita.\n");
-    }
-// Movimento da peça! (Torre);
-    printf("Movimento completo Torre.\n");    
+// Movimento Torre, Bispo e Rainha;
+        printf(" -> Movimento Torre.\n");
+    movimentoTorre (5);
+        printf(" -> Movimento Bispo.\n");
+    movimentoBispo (5);
+        printf(" -> Movimento Rainha.\n");
+    movimentoRainha (8);
 
-    for (int t = 0; t < 5; t++)
-    {
-        printf(" Para Direita.\n");
-    }
-// Movimento da peça! (Cavalo);
-    
-    printf ("Movimento completo do Cavalo.\n");     
-  
+// Movimento Cavalo;
+    printf (" ->  Movimento completo Cavalo.\n");
     int movimentocompleto = 1; // Variavel local;
 
     while (movimentocompleto--)
     {
         for(int c = 0; c < 2; c++)
         {
-            printf (" Para Baixo.\n");
+            printf (" Para Cima.\n");
         } 
-            printf (" Para Esquerda.\n");
-    }
-// Movimento da peça Rainha;
-    printf("Movimento completo Rainha.\n");
-    
-    for(int r = 0; r < 8; r++)
-    {
-        printf(" Para Esquerda.\n");
+            printf (" Para Direita.\n");
     }
     
     return 0;
